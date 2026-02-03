@@ -26,7 +26,7 @@ Microservicio en **ASP.NET Core** que permite registrar y buscar facturas en **S
 
 ---
 
-## 🔧 Preparar la base de datos
+## Preparar la base de datos
 
 1. Ejecutar el script `Database/setup.sql` en el servidor SQL.
    - Con `sqlcmd` (SQL Server local):
@@ -87,7 +87,7 @@ dotnet run
 
 ---
 
-## 🧭 Endpoints
+## Endpoints
 
 1. **POST /invoice** (Autorizado)
    - Descripción: Crea una factura y retorna `201 Created` con `{ id }`.
@@ -121,7 +121,7 @@ dotnet run
 
 ---
 
-## 🔐 Autenticación
+## Autenticación
 
 - Todos los endpoints de `invoice` están protegidos con **JWT Bearer**.
 - Obtener token con `POST /auth/login` y usar header:
@@ -134,7 +134,7 @@ Authorization: Bearer <token>
 
 ---
 
-## 🧪 Pruebas manuales (curl)
+##  Pruebas manuales (curl)
 
 1. Obtener token:
 
@@ -168,7 +168,7 @@ curl -k https://localhost:7106/invoice/1 -H "Authorization: Bearer <token>"
 
 ---
 
-## 🔁 Stored Procedures & Acceso a datos
+## Stored Procedures & Acceso a datos
 
 - La capa `InvoiceRepository` ejecuta los stored procedures mediante `SqlCommand` y `Microsoft.Data.SqlClient`.
 - Ventaja: control total sobre consultas y rendimiento, indexación manual, y cumplimiento del requisito de no usar EF.
@@ -196,3 +196,9 @@ curl -k https://localhost:7106/invoice/1 -H "Authorization: Bearer <token>"
 
 Proyecto de ejemplo — ajustar según necesidades.
 
+# DOCUMENTOS ADICIONALES
+
+Teniendo en cuenta que el microservicio forma parte de la prueba tecnica con WTW, me permito incluir tambien:
+
+-- PROMPTS.md donde se evidencia la parte 2 de la prueba
+-- ESTRATEGA DE PRUEBA VOLUMETRICA.pdf donde se evidenci la parte 3 de la prueba
